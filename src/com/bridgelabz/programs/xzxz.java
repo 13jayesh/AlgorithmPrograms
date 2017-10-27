@@ -33,3 +33,44 @@ class SimpleGen<U, V>{
        System.out.println("add is "+ (Integer.parseInt(objUreff.toString())+Integer.parseInt(objVreff.toString())));
     }
 }
+//////////////////??????////////////////////????????????????????////////////////
+package com.bridgelabz.utility;
+
+import java.util.Scanner;
+
+public class binarysearchtee {
+
+	public static int searchtee(int no)
+	{
+	
+	int counter=0;
+	long possiblesearch=0;
+	int noofsearch=0;
+
+		if(no==1 || no==0)
+		{
+			return 1;
+			
+		}
+		else
+		{
+			while(counter<no)
+			{
+				counter++;
+				possiblesearch=possiblesearch+searchtee((int)counter-1)*searchtee((int)no-counter);
+		}
+			return  (int) possiblesearch;
+		}
+			
+	
+	}
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter number");
+		int no=sc.nextInt();
+		searchtee(no);
+		System.out.println(searchtee(no));
+		
+	}
+}

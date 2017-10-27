@@ -1,10 +1,12 @@
 package com.bridgelabz.util;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class utility 
 {
+	private static final int[] Array = null;
 	//Method of binarySearchInteger
 	static int i, min, max, mid, a[];
 	static Scanner sc = new Scanner(System.in);
@@ -42,7 +44,7 @@ public class utility
 	}
 
 	//Method for binarySearch for string
-	public static void bibinarySearchIntarySearchstr(int size) {
+	public static void binarySearchstr(int size) {
 		String Ab[] = new String[size];
 		System.out.println("enter element");
 		for (i = 0; i < size; i++) {
@@ -132,9 +134,9 @@ public class utility
 		}
 	}
 //Method of bubbleSortint for Integer
-	public static void bubbleSortint(int a[]) {
+	public static void booblsort(int a[],int size) {
 		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 0; i < size; i++) {	
 			a[i] = sc.nextInt();
 
 		}
@@ -287,8 +289,8 @@ public class utility
 		     }
 		  public static void ATm1(int a[],int Amount)
 			{	
-				
-			int i,Count1=0,Count2=0,count3=0,count4=0,Count5=0,Count6=0,Count7=0,Count8=0,Count9=0;
+			  
+			int i,Value=0,Count1=0,Count2=0,count3=0,count4=0,Count5=0,Count6=0,Count7=0,Count8=0,Count9=0;
 			int length = a.length;
 			while(Amount!=0)
 			{
@@ -297,44 +299,45 @@ public class utility
 					if(Amount>=a[i])
 					{
 						Amount=Amount-a[i];
-						System.out.println(a[i]);
-						if(a[i]==1000)
-						{
-							Count1++;
-						}
-						if(a[i]==500)
-						{
-							Count2++;
-						}
-						if(a[i]==100)
-						{
-							count3++;
-						}
-						if(a[i]==50)
-						{
-							count3++;
-						}
-						if(a[i]==20)
-						{
-							Count5++;
-						}
-						if(a[i]==10)
-						{
-							Count6++;
-						}
-						if(a[i]==5)
-						{
-							Count7++;
-						}
-						if(a[i]==2)
-						{
-							Count8++;
-						}
-						if(a[i]==1)
-						{
-							Count9++;
-						}
-					
+						Array[i]=Value++;
+//						System.out.println(a[i]);
+//						if(a[i]==1000)
+//						{
+//							Count1++;
+//						}
+//						if(a[i]==500)
+//						{
+//							Count2++;
+//						}
+//						if(a[i]==100)
+//						{
+//							count3++;
+//						}
+//						if(a[i]==50)
+//						{
+//							count3++;
+//						}
+//						if(a[i]==20)
+//						{
+//							Count5++;
+//						}
+//						if(a[i]==10)
+//						{
+//							Count6++;
+//						}
+//						if(a[i]==5)
+//						{
+//							Count7++;
+//						}
+//						if(a[i]==2)
+//						{
+//							Count8++;
+//						}
+//						if(a[i]==1)
+//						{
+//							Count9++;
+//						}
+//					
 						}
 					
 					else
@@ -343,15 +346,10 @@ public class utility
 					}
 					}		
 				}
-			System.out.println("Number of 1000 Notes"+Count1);
-			System.out.println("Number of 500 Notes"+Count2);
-			System.out.println("Number of 100 Notes"+count3);
-			System.out.println("Number of 50 Notes"+count4);
-			System.out.println("Number of 20 Notes"+Count5);
-			System.out.println("Number of 10 Notes"+Count6);
-			System.out.println("Number of 5 Notes"+Count7);
-			System.out.println("Number of 2 Notes"+Count8);
-			System.out.println("Number of 1 Notes"+Count9);
+			for(i=length-1;i>=0;)
+			{
+			System.out.println("number of"+a[i]+" notes"+Array[i]);
+			}
 			}
 			public static void mPayment(double principle, double year, double rate) 
 			{
@@ -489,24 +487,24 @@ public class utility
 					case 5:dayName="Day of the week is Friday " ;
 					break;
 					case 6:dayName="Day of the week is Saturday " ;
-					break;
+					break;booblsort
 				}	
 				return dayName;
 			}
 			
-			/* this method takes month and year from user and display calender 
-			   for that */
+		
+	
 			public static void displayCalender(int month,int year)
 			{
-				//name of the month
+			
 				String[] months = {"", "January", "February", "March","April", "May", "June",
 									"July", "August", "September","October", "November", "December"};
-				//days in that month
+		
 				int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 				//29 days in feb month if year is leap year
 				if (month == 2 && isLeapYear(year)) 
 					days[month] = 29;
-				//displaying header for calender
+				
 				System.out.println(" " + months[month] + " " + year+"\n");
 		        System.out.println(" S\tM\tTu\tW\tTh\tF\tS");
 				int startingDay = day(1, month, year);
